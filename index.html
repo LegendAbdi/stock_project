@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stock Search</title>
+</head>
+<body>
+  <h1>Stock Search</h1>
+  <form action="/search" method="POST">
+    <label>
+      Search by:
+      <input type="text" name="query" required>
+    </label><br><br>
+    <label>
+      <input type="radio" name="searchType" value="symbol" checked>
+      Stock Symbol
+    </label>
+    <label>
+      <input type="radio" name="searchType" value="company">
+      Company Name
+    </label><br><br>
+    <button type="submit">Search</button>
+  </form>
+</body>
+</html>
