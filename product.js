@@ -41,8 +41,9 @@ async function findStockPrice(searchTerm, searchBy) {
 
 const server = http.createServer(async (req, res) => {
   const parsedUrl = url.parse(req.url, true);
+  console.log(parsedUrl);
 
-  if (req.method === 'GET' && parsedUrl.pathname === '/search') {
+  if (req.method === 'GET' || parsedUrl.pathname === '/search') {
     const query = parsedUrl.query.query || '';
     const searchType = parsedUrl.query.searchType || '';
 
@@ -64,3 +65,4 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
